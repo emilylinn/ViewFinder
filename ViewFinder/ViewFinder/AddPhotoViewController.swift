@@ -21,6 +21,21 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
 
     }
     @IBAction func savePhotoTapped(_ sender: Any) {
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            let photoToSave = Photos(entity: Photos.entity(), insertInto: context)
+            
+            photoToSave.caption = textField.text
+            
+            if let userImage = imageView.image {
+                if let userImageData = userImage.pngData() {
+                    photoToSave.addPhoto = userImageData
+                }
+            }
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            navigationController?.popViewController(animated: true)
+    }
     }
     @IBAction func cameraTapped(_ sender: Any) {
         imagePicker.sourceType = .camera
@@ -38,3 +53,4 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
 }
+
