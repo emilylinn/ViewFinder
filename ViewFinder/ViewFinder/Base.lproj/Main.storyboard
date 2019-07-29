@@ -35,7 +35,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Memoria" id="shQ-Na-ijU">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ToT-bV-eXI"/>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="Lpk-Pi-exI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Lpk-Pi-exI">
                             <connections>
                                 <segue destination="jLa-zE-uCw" kind="show" id="In3-sA-N30"/>
                             </connections>
@@ -49,7 +49,7 @@
         <!--Add New Photo-->
         <scene sceneID="bef-kS-Rxe">
             <objects>
-                <viewController id="jLa-zE-uCw" sceneMemberID="viewController">
+                <viewController id="jLa-zE-uCw" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DJf-YB-mhf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +57,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkE-mb-3I0">
                                 <rect key="frame" x="168" y="371" width="78" height="30"/>
                                 <state key="normal" title="Save Photo"/>
+                                <connections>
+                                    <action selector="savePhotoTapped:" destination="jLa-zE-uCw" eventType="touchUpInside" id="a23-FL-Xnh"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="camera icon" translatesAutoresizingMaskIntoConstraints="NO" id="sFu-lF-U82">
                                 <rect key="frame" x="76" y="159" width="262" height="159"/>
@@ -75,6 +78,9 @@
                                     <constraint firstAttribute="height" constant="66" id="psD-hG-1pe"/>
                                 </constraints>
                                 <state key="normal" title="Choose From LIbrary" image="photos library"/>
+                                <connections>
+                                    <action selector="libraryTapped:" destination="jLa-zE-uCw" eventType="touchUpInside" id="G2r-9c-18F"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPu-4p-Aqn">
                                 <rect key="frame" x="86" y="436" width="75" height="71"/>
@@ -83,6 +89,9 @@
                                     <constraint firstAttribute="height" constant="71" id="l6D-td-vMV"/>
                                 </constraints>
                                 <state key="normal" title="Take Photo" image="camera icon"/>
+                                <connections>
+                                    <action selector="cameraTapped:" destination="jLa-zE-uCw" eventType="touchUpInside" id="ZjB-1x-2WY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,6 +118,10 @@
                         <viewLayoutGuide key="safeArea" id="wnV-Hs-hDE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="MDg-bB-BGA"/>
+                    <connections>
+                        <outlet property="imageView" destination="sFu-lF-U82" id="J1M-6R-GYN"/>
+                        <outlet property="textField" destination="ebr-b2-aNq" id="ycS-hx-1m9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btf-td-t1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
