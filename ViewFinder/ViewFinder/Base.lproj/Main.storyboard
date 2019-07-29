@@ -34,6 +34,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Memoria" id="shQ-Na-ijU">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ToT-bV-eXI"/>
                         <barButtonItem key="rightBarButtonItem" title="+" id="Lpk-Pi-exI">
                             <connections>
                                 <segue destination="jLa-zE-uCw" kind="show" id="In3-sA-N30"/>
@@ -45,20 +46,73 @@
             </objects>
             <point key="canvasLocation" x="733.33333333333337" y="105.13392857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Add New Photo-->
         <scene sceneID="bef-kS-Rxe">
             <objects>
                 <viewController id="jLa-zE-uCw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DJf-YB-mhf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkE-mb-3I0">
+                                <rect key="frame" x="168" y="371" width="78" height="30"/>
+                                <state key="normal" title="Save Photo"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="camera icon" translatesAutoresizingMaskIntoConstraints="NO" id="sFu-lF-U82">
+                                <rect key="frame" x="76" y="159" width="262" height="159"/>
+                                <color key="tintColor" red="0.96846610307693481" green="0.92158693075180054" blue="0.8882872462272644" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ebr-b2-aNq">
+                                <rect key="frame" x="99" y="333" width="217" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJZ-IJ-hjT">
+                                <rect key="frame" x="241" y="441" width="75" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="93H-tV-eQT"/>
+                                    <constraint firstAttribute="height" constant="66" id="psD-hG-1pe"/>
+                                </constraints>
+                                <state key="normal" title="Choose From LIbrary" image="photos library"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPu-4p-Aqn">
+                                <rect key="frame" x="86" y="436" width="75" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="65T-pk-Ui9"/>
+                                    <constraint firstAttribute="height" constant="71" id="l6D-td-vMV"/>
+                                </constraints>
+                                <state key="normal" title="Take Photo" image="camera icon"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="bottom" secondItem="CPu-4p-Aqn" secondAttribute="bottom" constant="229" id="1Vk-QN-u0l"/>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="trailing" secondItem="ebr-b2-aNq" secondAttribute="trailing" constant="98" id="1e5-IA-nxc"/>
+                            <constraint firstItem="qJZ-IJ-hjT" firstAttribute="leading" secondItem="CPu-4p-Aqn" secondAttribute="trailing" constant="80" id="3ej-IF-3Sb"/>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="trailing" secondItem="qJZ-IJ-hjT" secondAttribute="trailing" constant="98" id="9HE-bV-mrl"/>
+                            <constraint firstItem="IkE-mb-3I0" firstAttribute="leading" secondItem="wnV-Hs-hDE" secondAttribute="leading" constant="168" id="AaI-6t-Ou3"/>
+                            <constraint firstItem="IkE-mb-3I0" firstAttribute="top" secondItem="ebr-b2-aNq" secondAttribute="bottom" constant="8" id="FWl-vV-2TN"/>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="trailing" secondItem="qJZ-IJ-hjT" secondAttribute="trailing" constant="98" id="I6x-y6-Lxy"/>
+                            <constraint firstItem="sFu-lF-U82" firstAttribute="leading" secondItem="wnV-Hs-hDE" secondAttribute="leading" constant="76" id="JbJ-Cy-2rm"/>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="bottom" secondItem="qJZ-IJ-hjT" secondAttribute="bottom" constant="229" id="P27-pm-VGQ"/>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="trailing" secondItem="IkE-mb-3I0" secondAttribute="trailing" constant="168" id="QZk-F0-YGq"/>
+                            <constraint firstItem="CPu-4p-Aqn" firstAttribute="top" secondItem="IkE-mb-3I0" secondAttribute="bottom" constant="35" id="XPI-aq-Xux"/>
+                            <constraint firstItem="ebr-b2-aNq" firstAttribute="top" secondItem="sFu-lF-U82" secondAttribute="bottom" constant="15" id="Y35-E1-0Qv"/>
+                            <constraint firstItem="CPu-4p-Aqn" firstAttribute="leading" secondItem="wnV-Hs-hDE" secondAttribute="leading" constant="86" id="YcD-JI-Z2w"/>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="trailing" secondItem="sFu-lF-U82" secondAttribute="trailing" constant="76" id="cyK-m6-DK6"/>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="trailing" secondItem="qJZ-IJ-hjT" secondAttribute="trailing" constant="98" id="gcz-If-ZkE"/>
+                            <constraint firstItem="ebr-b2-aNq" firstAttribute="leading" secondItem="wnV-Hs-hDE" secondAttribute="leading" constant="99" id="o3k-8e-V0R"/>
+                            <constraint firstItem="sFu-lF-U82" firstAttribute="top" secondItem="wnV-Hs-hDE" secondAttribute="top" constant="95" id="paQ-gb-mLd"/>
+                            <constraint firstItem="wnV-Hs-hDE" firstAttribute="bottom" secondItem="qJZ-IJ-hjT" secondAttribute="bottom" constant="229" id="xJb-RL-FEB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wnV-Hs-hDE"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add New Photo" id="MDg-bB-BGA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btf-td-t1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="104"/>
+            <point key="canvasLocation" x="1410.144927536232" y="103.53260869565219"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yTS-9u-DOJ">
@@ -79,4 +133,8 @@
             <point key="canvasLocation" x="-178.2608695652174" y="104.46428571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera icon" width="1000" height="989"/>
+        <image name="photos library" width="200" height="200"/>
+    </resources>
 </document>
