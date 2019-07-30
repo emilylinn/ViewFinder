@@ -151,7 +151,7 @@
                         <viewLayoutGuide key="safeArea" id="vrc-Xr-eAi"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="Iiz-8U-rfV" id="ghN-ZV-ZMy"/>
+                        <outlet property="image" destination="Iiz-8U-rfV" id="gH6-uv-esk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kk-XD-9A6" userLabel="First Responder" sceneMemberID="firstResponder"/>
